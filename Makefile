@@ -1,5 +1,6 @@
 Arpattack: main.o Arp.o Host.o Attack.o Analyse.o Argconfigure.o
 	cc main.o Arp.o Host.o Attack.o Analyse.o Argconfigure.o -o EthernetPolice -lpcap -Wall
+	rm main.o Arp.o Host.o Attack.o Analyse.o Argconfigure.o
 
 main.o: main.c
 	cc -c main.c 
@@ -16,3 +17,6 @@ Argconfigure.o: Argconfigure.c Argconfigure.h
 
 clean:
 	rm main.o Arp.o Host.o Attack.o Analyse.o Argconfigure.o
+
+install:
+	sudo mv EthernetPolice /usr/local/bin
